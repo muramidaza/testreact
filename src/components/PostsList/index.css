@@ -1,0 +1,39 @@
+.postsList {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 2%;
+}
+
+.postsList__cardPost {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 3%;
+}
+
+.postsList__cardPost_number {
+  font-size: 1.3rem;
+}
+
+.postsList__cardPost_header {
+  font-size: 1.3rem;
+}
+
+.postsList__cardPost_body {
+  font-size: 1rem; 
+}
+
+.postList__linkPost {
+  display: block;
+  margin: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  height: 2rem;
+  width: 5rem;
+  color: black;
+  font-size: 1rem;
+  line-height: 2rem;
+  text-align: center;
+  text-decoration: none;
+}

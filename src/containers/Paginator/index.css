@@ -1,0 +1,29 @@
+.paginator {
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.paginator__link {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid blue;
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+  color: blue;
+  line-height: 2rem;
+  margin: 0;
+}
+
+.paginator__link.activ {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid blue;
+  text-align: center;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  line-height: 2rem;
+  margin: 0;
+}
