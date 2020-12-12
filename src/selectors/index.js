@@ -16,7 +16,6 @@ export const selectCurrentPage = currentPage;
 export const selectCountPages = store => store.listcontainer.countPages;
 
 //OnePostPage
-//export const selectSelectedPost = (store) => store.app.postsData[store.router.location.pathname.split('/')[2] || -1]
 
 export const selectSelectedPostID = store => store.router.location.pathname.split('/')[2] || -1;
 
@@ -25,3 +24,13 @@ export const selectSelectedPost = (store) => {
 	const selectedPost = store.router.location.pathname.split('/')[2] || -1;
 	return postData[selectedPost];
 }
+
+//Comments
+
+export const selectCommentsLoading = store => store.comments.loading;
+
+export const selectCommentsError = store => store.comments.error;
+
+export const selectCommentsSuccess = store => store.comments.success;
+
+export const selectCommentsData = store => store.comments.commentsData;

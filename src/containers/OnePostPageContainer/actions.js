@@ -1,7 +1,7 @@
 import {
-	LOAD_DATA_SUCCESS,
-	LOAD_DATA_FAILURE,
-	LOAD_DATA_STARTED,
+	LOAD_COMMENTS_DATA_SUCCESS,
+	LOAD_COMMENTS_DATA_FAILURE,
+	LOAD_COMMENTS_DATA_STARTED,
 } from './types';
 
 export const loadData = (
@@ -30,17 +30,17 @@ export const loadData = (
 };
 
 const loadDataSuccess = (commentsData) => ({
-	type: LOAD_DATA_SUCCESS,
+	type: LOAD_COMMENTS_DATA_SUCCESS,
 	payload: {
 		commentsData
 	},
 });
 
 const loadDataStarted = () => ({
-	type: LOAD_DATA_STARTED,
+	type: LOAD_COMMENTS_DATA_STARTED,
 });
 
 const loadDataFailure = error => ({
-	type: LOAD_DATA_FAILURE,
+	type: LOAD_COMMENTS_DATA_FAILURE,
 	payload: { error },
 });

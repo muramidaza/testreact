@@ -9,9 +9,9 @@ const initialState = {
 
 export default function reducers(state = initialState, action) {
 	switch (action.type) {
-		case types.LOAD_DATA_STARTED:
+		case types.LOAD_COMMENTS_DATA_STARTED:
 			return { ...state, loading: true };
-		case types.LOAD_DATA_SUCCESS:
+		case types.LOAD_COMMENTS_DATA_SUCCESS:
 			return {
 				...state,
 				loading: false,
@@ -19,7 +19,7 @@ export default function reducers(state = initialState, action) {
 				success: true,
 				commentsData: action.payload.commentsData
 			};
-		case types.LOAD_DATA_FAILURE:
+		case types.LOAD_COMMENTS_DATA_FAILURE:
 			return { ...state, loading: false, error: action.payload.error };
 		default:
 			return state;
