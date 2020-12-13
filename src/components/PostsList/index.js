@@ -6,7 +6,7 @@ import './index.css';
 export default class PostsList extends React.Component {
 	render() {
 		return (
-			<ul className="postsList">
+			<div className="postsList">
 				{this.props.posts.map((post, i) => (
 					<div className="postsList__cardPost" key={i}>
 						<div>
@@ -19,7 +19,7 @@ export default class PostsList extends React.Component {
 						</Link>
 					</div>
 				))}
-			</ul>
+			</div>
 		);
 	}
 }

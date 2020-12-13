@@ -1,20 +1,20 @@
 .postsList {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  padding: 2%;
+  align-items: flex-start;
 }
 
 .postsList__cardPost {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  padding: 3%;
+  padding: 1% 0 0;
 }
 
 .postsList__cardPost_number {
   align-self: center;
   font-size: 1.3rem;
+  flex: 0 0 auto;
 }
 
 .postsList__cardPost_header {

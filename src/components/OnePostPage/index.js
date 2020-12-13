@@ -19,7 +19,7 @@ export default class OnePostPage extends React.PureComponent {
 				<div>
 					<p>Комментарии</p>
 					{this.props.commentsData.length > 0 &&
-						<ul className="onePostPage__commentsList">
+						<div className="onePostPage__commentsList">
 							{this.props.commentsData.map((comments, i) => (
 								<div className="postsList__cardPost" key={i}>
 									<div>
@@ -29,7 +29,7 @@ export default class OnePostPage extends React.PureComponent {
 									</div>
 								</div>
 							))}
-						</ul>
+						</div>
 					}
 					{this.props.loading && 
 						<div className="onePostPage__commentsList_loading">Комментарии загружаются</div>
