@@ -10,7 +10,7 @@ export default class PostsList extends React.Component {
 				{this.props.posts.map((post, i) => (
 					<div className="postsList__cardPost" key={i}>
 						<div>
-							<p className="postsList__cardPost_number">{post.id}</p>
+							<p className="postsList__cardPost_number">- {post.id} -</p>
 							<p className="postsList__cardPost_header">{post.title}</p>
 							<p className="postsList__cardPost_body">{post.body}</p>
 						</div>

@@ -1,18 +1,19 @@
 .postsList {
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
   padding: 2%;
 }
 
 .postsList__cardPost {
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: flex-start;
   padding: 3%;
 }
 
 .postsList__cardPost_number {
+  align-self: center;
   font-size: 1.3rem;
 }
 
@@ -24,7 +25,7 @@
   font-size: 1rem; 
 }
 
-.postList__linkPost {
+.postsList__linkPost {
   display: block;
   margin: 0.5rem;
   background-color: white;

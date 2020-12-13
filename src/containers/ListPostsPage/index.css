@@ -1,7 +1,8 @@
 .listPostsPage {
   max-width: 1200px;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  align-items: center;
   margin: 0 auto;
   width: 90%;
 }
@@ -11,5 +12,8 @@
 }
 
 .listPostsPage__mainSection {
-  margin: 3% 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 90%;
 }
