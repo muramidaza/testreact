@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import { loadData } from './actions';
-import { selectSelectedPost, selectSelectedPostID, selectCommentsLoading, selectCommentsError, selectCommentsSuccess, selectCommentsData } from '../../selectors';
+import { selectSelectedPost, selectCommentsLoading, selectCommentsError, selectCommentsSuccess, selectCommentsData } from '../../selectors';
 
 import OnePostPage from '../../components/OnePostPage';
 import EmptyPostPage from '../../components/EmptyPostPage';
@@ -12,7 +12,7 @@ class OnePostPageContainer extends React.Component {
 	componentDidMount() {
 		this.props.onFetchCommentsData(
 			this.props.url,
-			this.props.postsInPage
+			this.props.selectedPost.id
 		);
 	}
 
@@ -27,6 +27,9 @@ class OnePostPageContainer extends React.Component {
 				<OnePostPage
 					post={this.props.selectedPost}
 					onGoBack={this.handleGoBack}
+					loadingComments={this.props.loading}
+					errorComments={this.props.error}
+					commentsData={this.props.commentsData}
 				/>
 			);
 		} else {
@@ -38,7 +41,6 @@ class OnePostPageContainer extends React.Component {
 const mapStateToProps = store => {
 	return {
 		selectedPost: selectSelectedPost(store),
-		selectedPostID: selectSelectedPostID(store),
 		loading: selectCommentsLoading(store),
 		error: selectCommentsError(store),
 		success: selectCommentsSuccess(store),

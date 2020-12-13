@@ -13,8 +13,6 @@ import {
 } from '../../selectors';
 
 const dividPostsByPages = (posts, postsInPage) => {
-	console.log(posts);
-	console.log(postsInPage);
 	let arrayChunks = [];
 	const amountChunks = Math.ceil(posts.length / postsInPage);
 	if (amountChunks == 0) return [[]];
@@ -30,7 +28,6 @@ const dividPostsByPages = (posts, postsInPage) => {
 class ListContaiter extends React.Component {
 
 	render() {
-		console.log(this.props.currentPage);
 		const preparedPostsData = dividPostsByPages(
 			this.props.postsData,
 			this.props.postsInPage

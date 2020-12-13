@@ -8,19 +8,22 @@ export const loadData = (
 	url, postID
 ) => {
 	return dispatch => {
+		console.log()
+		
 		dispatch(loadDataStarted());
 
-		fetch(url + '/posts/' + postID  + '/comments')
+		const URLstring = url + '/posts/' + postID  + '/comments';
+
+		console.log(URLstring);
+
+		fetch(URLstring)
 			.then(res => res.json())
 			.then(data => {
-				
+				console.log(data);
 				if (data && data.length > 0) {
-					dispatch(
-						loadDataSuccess(data)
-					);
-
+					dispatch(loadDataSuccess(data));
 				} else {
-					throw new Error('Комментариев нет');
+					dispatch(loadDataFailure('Комментариев нет'));
 				}
 			})
 			.catch(err => {
@@ -40,7 +43,7 @@ const loadDataStarted = () => ({
 	type: LOAD_COMMENTS_DATA_STARTED,
 });
 
-const loadDataFailure = error => ({
+const loadDataFailure = (error) => ({
 	type: LOAD_COMMENTS_DATA_FAILURE,
 	payload: { error },
 });
