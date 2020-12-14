@@ -11,7 +11,8 @@
 }
 
 .onePostPage__headerLabel {
-  font-size: 1.4rem;  
+  font-size: 1.4rem;
+  text-decoration: underline;
 }
 
 .onePostPage__headerLinkBack {
