@@ -27,7 +27,7 @@ export default class OnePostPage extends React.PureComponent {
 									<div>
 										<p className="commentsList__cardCommentName">{comments.name}</p>
 										<p className="commentsList__cardCommentBody">{comments.body}</p>
-										<p className="commentsList__cardCommentEmail">{comments.email}</p>
+										<p className="commentsList__cardCommentEmail"><a href={'mailto:' + comments.email}>{comments.email}</a></p>
 									</div>
 								</div>
 							))}

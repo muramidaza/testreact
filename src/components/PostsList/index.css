@@ -7,21 +7,26 @@
 .postsList__cardPost {
   display: flex;
   flex-flow: column nowrap;
-  padding: 1% 0 0;
   width: 90%;
+  background-color: #ECEFF0;
+  margin-top: 3%;
+  padding: 2%;
 }
 
 .postsList__cardPost_number {
   font-size: 1.3rem;
   text-align: center;
+  margin-top: 0;
 }
 
 .postsList__cardPost_header {
   font-size: 1.3rem;
+  border-top: 1px solid tomato;
+  border-bottom: 1px solid tomato;
 }
 
 .postsList__cardPost_body {
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
 .postsList__linkPost {
