@@ -7,25 +7,27 @@ export default class OnePostPage extends React.PureComponent {
 
 		return (
 			<div className='onePostPage'>
-				<div>
-					<button className="onePostPage__linkBack" onClick={this.props.onGoBack}>
-						&#8592;
-					</button>
-					{this.props.post.title}
+				<div className="onePostPage__header">
+					<p className="onePostPage__headerLabel">
+						<button className="onePostPage__headerLinkBack" onClick={this.props.onGoBack}>
+							&#8592;
+						</button>
+						{this.props.post.title}
+					</p>
 				</div>
-				<div>
+				<div className="onePostPage__body">
 					{this.props.post.body}
 				</div>
-				<div>
-					<p>Комментарии</p>
+				<div  className="onePostPage__commentsBlock">
+					<p className="commentsBlock__commentsLabel">Комментарии</p>
 					{this.props.commentsData.length > 0 &&
-						<div className="onePostPage__commentsList">
+						<div className="commentsBlock__commentsList">
 							{this.props.commentsData.map((comments, i) => (
-								<div className="postsList__cardPost" key={i}>
+								<div className="commentsList__cardComment" key={i}>
 									<div>
-										<p className="onePostPage__commentsList_name">{comments.name}</p>
-										<p className="onePostPage__commentsList_body">{comments.body}</p>
-										<p className="onePostPage__commentsList_email">{comments.email}</p>
+										<p className="commentsList__cardCommentName">{comments.name}</p>
+										<p className="commentsList__cardCommentBody">{comments.body}</p>
+										<p className="commentsList__cardCommentEmail">{comments.email}</p>
 									</div>
 								</div>
 							))}

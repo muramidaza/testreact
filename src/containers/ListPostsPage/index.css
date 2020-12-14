@@ -9,6 +9,7 @@
 
 .listPostsPage__headerSection {
   flex: 0 1 4rem;
+  align-items: center;
 }
 
 .listPostsPage__mainSection {
@@ -16,4 +17,11 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 90%;
+}
+
+.listPostsPage__footerSection {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 90%;  
 }

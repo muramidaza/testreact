@@ -1,78 +1,20 @@
-.goods {
-  font-family: OpenSans, sans-serif;
-  color: #323c48;
-  text-decoration: none;
-  position: relative;
-
+.onePostPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
-  margin: 10% auto;
+  margin: 5% auto;
 }
 
-.goods-none {
-  color: #7e8fa4;
+.onePostPage__header {
+  padding: 2%;
 }
 
-.goods__card {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+.onePostPage__headerLabel {
+  font-size: 1.4rem;  
 }
 
-.goods__imgCard,
-.goods__data {
-  width: 15rem;
-  height: 15rem;
-}
-
-.goods__type {
-  color: #41ce7f;
-  font-size: 12px;
-  position: relative;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  border-bottom-right-radius: 15px;
-  z-index: 1;
-  padding-top: 15px;
-  padding-right: 11px;
-  padding-bottom: 15px;
-  padding-left: 12px;
-  width: 50%;
-}
-
-.goods__type-none {
-  background-color: #f5f6fa;
-  color: #7e8fa4;
-}
-
-.goods__img {
-  box-shadow: 0 4px 8px 0 rgba(50, 60, 72, 0.1);
-}
-
-.goods__img-none {
-  opacity: 0.5;
-}
-
-.goods__name {
-  font-size: 1.3rem;
-  line-height: 1.6rem;
-  height: 1.6rem;
-  width: 90%;
-  padding: 0.3rem;
-  text-align: center;
-}
-
-.goods__prise {
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.2;
-  margin-top: 8px;
-}
-
-.goods__linkBack {
+.onePostPage__headerLinkBack {
   border: 0px;
   background-color: white;
   font-size: 1.6rem;
@@ -80,4 +22,44 @@
   text-decoration: none;
   line-height: 2.2rem;
   cursor: pointer;
+}
+
+.onePostPage__body {
+  font-size: 1.2rem;
+}
+
+.onePostPage__comments {
+  font-size: 1rem;
+  width: 90%;
+}
+
+.onePostPage__commentsBlock {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 5% 0 0;
+}
+
+.commentsBlock__commentsLabel {
+  font-size: 1.4rem;  
+}
+
+.commentsList__cardComment {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1% 0 0;
+  width: 90%;
+}
+
+.commentsList__cardCommentName {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.commentsList__cardCommentNameBody {
+  font-size: 1.3rem;
+}
+
+.commentsList__cardCommentEmail {
+  font-size: 1rem; 
 }

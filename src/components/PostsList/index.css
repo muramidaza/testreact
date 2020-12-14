@@ -1,20 +1,19 @@
 .postsList {
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .postsList__cardPost {
   display: flex;
   flex-flow: column nowrap;
-  align-items: flex-start;
   padding: 1% 0 0;
+  width: 90%;
 }
 
 .postsList__cardPost_number {
-  align-self: center;
   font-size: 1.3rem;
-  flex: 0 0 auto;
+  text-align: center;
 }
 
 .postsList__cardPost_header {
@@ -26,15 +25,8 @@
 }
 
 .postsList__linkPost {
-  display: block;
-  margin: 0.5rem;
-  background-color: white;
-  cursor: pointer;
-  height: 2rem;
   width: 5rem;
   color: black;
   font-size: 1rem;
-  line-height: 2rem;
   text-align: center;
-  text-decoration: none;
 }
