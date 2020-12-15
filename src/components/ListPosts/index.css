@@ -1,37 +1,42 @@
-.postsList {
+.listPosts {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
 
-.postsList__cardPost {
+.listPosts__cardPost {
   display: flex;
   flex-flow: column nowrap;
   width: 90%;
   background-color: #ECEFF0;
   margin-top: 3%;
   padding: 2%;
+  border-radius: 1rem;
 }
 
-.postsList__cardPost_number {
+.listPosts__cardPost_number {
   font-size: 1.3rem;
   text-align: center;
   margin-top: 0;
 }
 
-.postsList__cardPost_header {
+.listPosts__cardPost_header {
   font-size: 1.3rem;
   border-top: 1px solid tomato;
   border-bottom: 1px solid tomato;
 }
 
-.postsList__cardPost_body {
+.listPosts__cardPost_body {
   font-size: 1rem;
 }
 
-.postsList__linkPost {
+.listPosts__linkPost {
   width: 5rem;
   color: black;
   font-size: 1rem;
   text-align: center;
+}
+
+.listPosts__empty {
+	font-size: 1.2rem;
 }

@@ -18,9 +18,6 @@ export default class OnePostPage extends React.PureComponent {
 				<div className="onePostPageBlock__body">
 					{this.props.post.body}
 				</div>
-				<div  className="onePostPageBlock__footer">
-					{this.props.post.email}
-				</div>
 			</div>
 		);
 	}

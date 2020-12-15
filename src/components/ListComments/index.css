@@ -23,6 +23,7 @@
   width: 90%;
   background-color: #ECEFF0;
   margin-top: 2%;
+  border-radius: 1rem;  
 }
 
 .listComments__cardCommentName {
@@ -36,4 +37,13 @@
 
 .listComments__cardCommentEmail {
   font-size: 1rem; 
+}
+
+.listComments__empty, .listComments__loading {
+  font-size: 1.2rem;
+}
+
+.listComments__error {
+  font-size: 1.2rem;
+  color: red;
 }

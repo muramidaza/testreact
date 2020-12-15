@@ -15,11 +15,7 @@ export const loadData = (
 		fetch(URLstring)
 			.then(res => res.json())
 			.then(data => {
-				if (data && data.length > 0) {
-					dispatch(loadDataSuccess(data));
-				} else {
-					dispatch(loadDataFailure('Комментариев нет'));
-				}
+				dispatch(loadDataSuccess(data));
 			})
 			.catch(err => {
 				dispatch(loadDataFailure(err.message));

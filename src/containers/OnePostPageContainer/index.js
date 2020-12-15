@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import { selectSelectedPost } from '../../selectors';
 
 import OnePostPage from '../../components/OnePostPage';
-import EmptyPostPage from '../../components/EmptyPostPage';
+import InfoPage from '../../components/InfoPage';
 import ListCommentsContainer from '../ListCommentsContainer';
 
 import './index.css';
@@ -32,7 +32,7 @@ class OnePostPageContainer extends React.Component {
 				</div>
 			);
 		} else {
-			return <EmptyPostPage onGoBack={this.handleGoBack} />;
+			return <InfoPage title="Ошибка" message="Такого поста нет"/>;
 		}
 	}
 }

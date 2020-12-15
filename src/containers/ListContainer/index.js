@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-import PostsList from '../../components/PostsList';
+import ListPosts from '../../components/ListPosts';
 
 import { loadCountPages } from './actions';
 
@@ -41,7 +41,7 @@ class ListContaiter extends React.Component {
 			preparedPostsData[this.props.currentPage] || [];
 
 		return (
-			<PostsList
+			<ListPosts
 				posts={postsInCurrentPage}
 			/>
 		);

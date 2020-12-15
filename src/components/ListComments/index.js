@@ -21,11 +21,14 @@ export default class ListComments extends React.PureComponent {
 						))}
 					</div>
 				}
+				{this.props.comments.length == 0 &&	
+					<div className="listComments__empty">Комментариев нет</div>
+				}
 				{this.props.loading && 
-					<div className="listComments__loading">Комментарии загружаются</div>
+					<div className="listComments__loading">Комментарии загружаются...</div>
 				}
 				{this.props.error && 
-					<div className="listComments__commentsList_error">this.props.error</div>
+					<div className="listComments__error">this.props.error</div>
 				}								
 			</div>
 		);

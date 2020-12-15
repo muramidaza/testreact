@@ -12,19 +12,13 @@ export const loadData = (
 
 		fetch(url + '/posts')
 			.then(res => res.json())
-			.then(data => {
-				
-				if (data && data.length > 0) {
-					dispatch(
-						loadDataSuccess(
-							data,
-							postsInPage
-						)
-					);
-
-				} else {
-					throw new Error('Постов нет');
-				}
+			.then(data => {				
+				dispatch(
+					loadDataSuccess(
+						data,
+						postsInPage
+					)
+				);
 			})
 			.catch(err => {
 				console.log('error')
