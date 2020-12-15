@@ -2,17 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { loadData } from './actions';
-import { selectCommentsLoading, selectCommentsError, selectCommentsSuccess, selectCommentsData } from '../../selectors';
+import {
+	selectCommentsLoading,
+	selectCommentsError,
+	selectCommentsSuccess,
+	selectCommentsData,
+} from '../../selectors';
 import { URL } from '../../config';
 
 import ListComments from '../../components/ListComments';
 
 class ListCommentsContainer extends React.Component {
 	componentDidMount() {
-		this.props.onFetchCommentsData(
-			URL,
-			this.props.PostID
-		);
+		this.props.onFetchCommentsData(URL, this.props.PostID);
 	}
 
 	render() {
@@ -31,21 +33,19 @@ const mapStateToProps = store => {
 		loading: selectCommentsLoading(store),
 		error: selectCommentsError(store),
 		success: selectCommentsSuccess(store),
-		commentsData: selectCommentsData(store)				
+		commentsData: selectCommentsData(store),
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onFetchCommentsData: (
-			url,
-			postID
-		) => {
-			dispatch(
-				loadData(url, postID)
-			);
+		onFetchCommentsData: (url, postID) => {
+			dispatch(loadData(url, postID));
 		},
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListCommentsContainer);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(ListCommentsContainer);

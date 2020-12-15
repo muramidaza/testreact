@@ -11,7 +11,6 @@ import ListCommentsContainer from '../ListCommentsContainer';
 import './index.css';
 
 class OnePostPageContainer extends React.Component {
-
 	handleGoBack = event => {
 		event.preventDefault();
 		this.props.history.goBack();
@@ -25,23 +24,19 @@ class OnePostPageContainer extends React.Component {
 						post={this.props.selectedPost}
 						onGoBack={this.handleGoBack}
 					/>
-					<ListCommentsContainer
-						PostID={this.props.selectedPost.id}			
-					/>
+					<ListCommentsContainer PostID={this.props.selectedPost.id} />
 				</div>
 			);
 		} else {
-			return <InfoPage title="Ошибка" message="Такого поста нет"/>;
+			return <InfoPage title="Ошибка" message="Такого поста нет" />;
 		}
 	}
 }
 
 const mapStateToProps = store => {
 	return {
-		selectedPost: selectSelectedPost(store),			
+		selectedPost: selectSelectedPost(store),
 	};
 };
 
-export default withRouter(
-	connect(mapStateToProps)(OnePostPageContainer)
-);
+export default withRouter(connect(mapStateToProps)(OnePostPageContainer));

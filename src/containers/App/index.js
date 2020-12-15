@@ -16,15 +16,14 @@ import { URL } from '../../config';
 
 class App extends React.Component {
 	componentDidMount() {
-		this.props.onFetchData(
-			URL,
-			this.props.postsInPage
-		);
+		this.props.onFetchData(URL, this.props.postsInPage);
 	}
 
 	render() {
 		if (this.props.loading) {
-			return <InfoPage title="Загрузка постов" message="немного подождите..." />
+			return (
+				<InfoPage title="Загрузка постов" message="немного подождите..." />
+			);
 		}
 
 		if (this.props.error) {
@@ -38,11 +37,7 @@ class App extends React.Component {
 						<Switch>
 							<Route
 								exact
-								path={[
-									"/",
-									"/posts",
-									"/posts/:page",
-								]}
+								path={['/', '/posts', '/posts/:page']}
 								render={() => <ListPostsPage />}
 							/>
 							<Route
@@ -56,7 +51,9 @@ class App extends React.Component {
 				</ConnectedRouter>
 			);
 
-		return <InfoPage title="Подготовка к загрузке" message="немного подождите..." />
+		return (
+			<InfoPage title="Подготовка к загрузке" message="немного подождите..." />
+		);
 	}
 }
 
@@ -70,13 +67,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onFetchData: (
-			url,
-			postInPage
-		) => {
-			dispatch(
-				loadData(url, postInPage)
-			);
+		onFetchData: (url, postInPage) => {
+			dispatch(loadData(url, postInPage));
 		},
 	};
 };

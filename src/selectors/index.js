@@ -15,13 +15,14 @@ export const selectCountPages = store => store.listcontainer.countPages;
 
 //OnePostPage
 
-export const selectSelectedPostID = store => store.router.location.pathname.split('/')[2] || -1;
+export const selectSelectedPostID = store =>
+	store.router.location.pathname.split('/')[2] || -1;
 
-export const selectSelectedPost = (store) => {
+export const selectSelectedPost = store => {
 	const postData = store.app.postsData;
 	const selectedPost = store.router.location.pathname.split('/')[2] || -1;
 	return postData[selectedPost];
-}
+};
 
 //Comments
 

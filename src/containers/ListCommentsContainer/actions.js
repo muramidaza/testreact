@@ -4,13 +4,11 @@ import {
 	LOAD_COMMENTS_DATA_STARTED,
 } from './types';
 
-export const loadData = (
-	url, postID
-) => {
+export const loadData = (url, postID) => {
 	return dispatch => {
 		dispatch(loadDataStarted());
 
-		const URLstring = url + "/posts/" + postID  + "/comments";
+		const URLstring = url + '/posts/' + postID + '/comments';
 
 		fetch(URLstring)
 			.then(res => res.json())
@@ -23,10 +21,10 @@ export const loadData = (
 	};
 };
 
-const loadDataSuccess = (commentsData) => ({
+const loadDataSuccess = commentsData => ({
 	type: LOAD_COMMENTS_DATA_SUCCESS,
 	payload: {
-		commentsData
+		commentsData,
 	},
 });
 
@@ -34,7 +32,7 @@ const loadDataStarted = () => ({
 	type: LOAD_COMMENTS_DATA_STARTED,
 });
 
-const loadDataFailure = (error) => ({
+const loadDataFailure = error => ({
 	type: LOAD_COMMENTS_DATA_FAILURE,
 	payload: { error },
 });

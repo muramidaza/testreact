@@ -2,10 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import {
-	selectCurrentPage,
-	selectCountPages,
-} from '../../selectors';
+import { selectCurrentPage, selectCountPages } from '../../selectors';
 
 import './index.css';
 
@@ -43,18 +40,24 @@ class Paginator extends React.Component {
 			amount > 1 && (
 				<div className="paginator">
 					{this.state.section > 0 && (
-						<button type="button" onClick={this.handleClickPrev} className="paginator__buttonlimit">Назад</button>
+						<button
+							type="button"
+							onClick={this.handleClickPrev}
+							className="paginator__buttonlimit"
+						>
+							Назад
+						</button>
 					)}
 
 					{this.arrPageNumbers[this.state.section].map((item, i) => {
-						const pathname = "/posts/" + item;
+						const pathname = '/posts/' + item;
 
 						return (
 							<NavLink
 								className="paginator__link"
 								activeClassName="activ"
 								isActive={(match, location) => {
-									console.log()
+									console.log();
 									if (
 										(!location.pathname.split('/')[2] && item == 0) ||
 										location.pathname == pathname
@@ -70,7 +73,13 @@ class Paginator extends React.Component {
 					})}
 
 					{this.state.section < this.paginatorLimit && (
-						<button type="button" onClick={this.handleClickNext} className="paginator__buttonlimit">Вперед</button>
+						<button
+							type="button"
+							onClick={this.handleClickNext}
+							className="paginator__buttonlimit"
+						>
+							Вперед
+						</button>
 					)}
 				</div>
 			)
