@@ -16,7 +16,7 @@ import { URL } from '../../config';
 
 class App extends React.Component {
 	componentDidMount() {
-		this.props.onFetchData(URL, this.props.postsInPage);
+		this.props.onFetchData(URL);
 	}
 
 	render() {
@@ -67,8 +67,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onFetchData: (url, postInPage) => {
-			dispatch(loadData(url, postInPage));
+		onFetchData: (url) => {
+			dispatch(loadData(url));
 		},
 	};
 };
