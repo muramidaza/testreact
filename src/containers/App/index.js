@@ -39,9 +39,9 @@ class App extends React.Component {
 							<Route
 								exact
 								path={[
-									'/',
-									'/posts',
-									'/posts/:page',
+									"/",
+									"/posts",
+									"/posts/:page",
 								]}
 								render={() => <ListPostsPage />}
 							/>

@@ -10,7 +10,7 @@ export const loadData = (
 	return dispatch => {
 		dispatch(loadDataStarted());
 
-		const URLstring = url + '/posts/' + postID  + '/comments';
+		const URLstring = url + "/posts/" + postID  + "/comments";
 
 		fetch(URLstring)
 			.then(res => res.json())
