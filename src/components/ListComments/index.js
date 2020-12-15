@@ -15,7 +15,7 @@ export default class ListComments extends React.PureComponent {
 								<div>
 									<p className="listComments__cardCommentName">{comment.name}</p>
 									<p className="listComments__cardCommentBody">{comment.body}</p>
-									<p className="listComments__cardCommentEmail"><a href={'mailto:' + comment.email}>{comment.email}</a></p>
+									<p className="listComments__cardCommentEmail"><a href={"mailto:" + comment.email}>{comment.email}</a></p>
 								</div>
 							</div>
 						))}

@@ -12,22 +12,23 @@ import InfoPage from '../../components/InfoPage';
 
 import { loadData } from './actions';
 import { selectLoading, selectError, selectSuccess } from '../../selectors';
+import { URL } from '../../config';
 
 class App extends React.Component {
 	componentDidMount() {
 		this.props.onFetchData(
-			this.props.url,
+			URL,
 			this.props.postsInPage
 		);
 	}
 
 	render() {
 		if (this.props.loading) {
-			return <InfoPage title={'Загрузка постов'} message="немного подождите..." />
+			return <InfoPage title="Загрузка постов" message="немного подождите..." />
 		}
 
 		if (this.props.error) {
-			return <InfoPage title={'Ошибка загрузки'} message={this.props.error} />;
+			return <InfoPage title="Ошибка загрузки" message={this.props.error} />;
 		}
 
 		if (this.props.success)
@@ -47,7 +48,7 @@ class App extends React.Component {
 							<Route
 								exact
 								path="/post/:id"
-								render={() => <OnePostPageContainer url={this.props.url} />}
+								render={() => <OnePostPageContainer />}
 							/>
 							<Route render={() => <Page404 />} />
 						</Switch>
@@ -55,7 +56,7 @@ class App extends React.Component {
 				</ConnectedRouter>
 			);
 
-		return <InfoPage title={'Подготовка к загрузке'} message="немного подождите..." />
+		return <InfoPage title="Подготовка к загрузке" message="немного подождите..." />
 	}
 }
 

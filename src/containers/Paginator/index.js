@@ -43,7 +43,7 @@ class Paginator extends React.Component {
 			amount > 1 && (
 				<div className="paginator">
 					{this.state.section > 0 && (
-						<button type="button" onClick={this.handleClickPrev} className={'paginator__buttonlimit'}>Назад</button>
+						<button type="button" onClick={this.handleClickPrev} className="paginator__buttonlimit">Назад</button>
 					)}
 
 					{this.arrPageNumbers[this.state.section].map((item, i) => {
@@ -64,14 +64,13 @@ class Paginator extends React.Component {
 								to={pathname}
 								key={i}
 							>
-								{' '}
-								{item + 1}{' '}
+								{item + 1}
 							</NavLink>
 						);
 					})}
 
 					{this.state.section < this.paginatorLimit && (
-						<button type="button" onClick={this.handleClickNext} className={'paginator__buttonlimit'}>Вперед</button>
+						<button type="button" onClick={this.handleClickNext} className="paginator__buttonlimit">Вперед</button>
 					)}
 				</div>
 			)
