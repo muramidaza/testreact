@@ -10,7 +10,7 @@ export const loadData = (
 	return dispatch => {
 		dispatch(loadDataStarted());
 
-		fetch(url + '/posts')
+		fetch(url + "/posts")
 			.then(res => res.json())
 			.then(data => {				
 				dispatch(
@@ -18,7 +18,6 @@ export const loadData = (
 				);
 			})
 			.catch(err => {
-				console.log('error')
 				dispatch(loadDataFailure(err.message));
 			});
 	};
@@ -26,9 +25,7 @@ export const loadData = (
 
 const loadDataSuccess = (postsData) => ({
 	type: LOAD_DATA_SUCCESS,
-	payload: {
-		postsData
-	},
+	payload: { postsData },
 });
 
 const loadDataStarted = () => ({
