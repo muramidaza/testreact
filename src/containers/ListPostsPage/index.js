@@ -15,6 +15,8 @@ export default class ListPostsPage extends React.Component {
 				</div>
 				<div className="listPostsPage__mainSection">
 					<ListContainer />
+				</div>
+				<div className="listPostsPage__footerSection">
 					<Paginator />
 				</div>
 			</div>

@@ -23,9 +23,7 @@ class App extends React.Component {
 
 	render() {
 		if (this.props.loading) {
-			return (
-				<InfoPage title={'Загрузка постов'} message="немного подождите..." />
-			);
+			return <InfoPage title={'Загрузка постов'} message="немного подождите..." />
 		}
 
 		if (this.props.error) {
@@ -57,12 +55,7 @@ class App extends React.Component {
 				</ConnectedRouter>
 			);
 
-		return (
-			<InfoPage
-				title={'Подготовка к загрузке'}
-				message="немного подождите..."
-			/>
-		);
+		return <InfoPage title={'Подготовка к загрузке'} message="немного подождите..." />
 	}
 }
 

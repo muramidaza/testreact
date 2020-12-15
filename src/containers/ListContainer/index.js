@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-import PostsList from '../../components/PostsList';
+import ListPosts from '../../components/ListPosts';
 
 import { loadCountPages } from './actions';
 
@@ -13,8 +13,6 @@ import {
 } from '../../selectors';
 
 const dividPostsByPages = (posts, postsInPage) => {
-	console.log(posts);
-	console.log(postsInPage);
 	let arrayChunks = [];
 	const amountChunks = Math.ceil(posts.length / postsInPage);
 	if (amountChunks == 0) return [[]];
@@ -30,7 +28,6 @@ const dividPostsByPages = (posts, postsInPage) => {
 class ListContaiter extends React.Component {
 
 	render() {
-		console.log(this.props.currentPage);
 		const preparedPostsData = dividPostsByPages(
 			this.props.postsData,
 			this.props.postsInPage
@@ -44,7 +41,7 @@ class ListContaiter extends React.Component {
 			preparedPostsData[this.props.currentPage] || [];
 
 		return (
-			<PostsList
+			<ListPosts
 				posts={postsInCurrentPage}
 			/>
 		);

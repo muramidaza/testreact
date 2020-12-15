@@ -1,78 +1,20 @@
-.goods {
-  font-family: OpenSans, sans-serif;
-  color: #323c48;
-  text-decoration: none;
-  position: relative;
-
+.onePostPageBlock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  margin: 10% auto;
+  margin: 5% auto;
 }
 
-.goods-none {
-  color: #7e8fa4;
+.onePostPageBlock__header {
+  border-top: 1px solid tomato;
+  border-bottom: 1px solid tomato;  
 }
 
-.goods__card {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+.onePostPageBlock__headerLabel {
+  font-size: 1.4rem;
 }
 
-.goods__imgCard,
-.goods__data {
-  width: 15rem;
-  height: 15rem;
-}
-
-.goods__type {
-  color: #41ce7f;
-  font-size: 12px;
-  position: relative;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  border-bottom-right-radius: 15px;
-  z-index: 1;
-  padding-top: 15px;
-  padding-right: 11px;
-  padding-bottom: 15px;
-  padding-left: 12px;
-  width: 50%;
-}
-
-.goods__type-none {
-  background-color: #f5f6fa;
-  color: #7e8fa4;
-}
-
-.goods__img {
-  box-shadow: 0 4px 8px 0 rgba(50, 60, 72, 0.1);
-}
-
-.goods__img-none {
-  opacity: 0.5;
-}
-
-.goods__name {
-  font-size: 1.3rem;
-  line-height: 1.6rem;
-  height: 1.6rem;
-  width: 90%;
-  padding: 0.3rem;
-  text-align: center;
-}
-
-.goods__prise {
-  font-weight: 400;
-  font-size: 1.2rem;
-  line-height: 1.2;
-  margin-top: 8px;
-}
-
-.goods__linkBack {
+.onePostPageBlock__headerLinkBack {
   border: 0px;
   background-color: white;
   font-size: 1.6rem;
@@ -80,4 +22,9 @@
   text-decoration: none;
   line-height: 2.2rem;
   cursor: pointer;
+}
+
+.onePostPageBlock__body {
+  margin-top: 2%;
+  font-size: 1.2rem;
 }

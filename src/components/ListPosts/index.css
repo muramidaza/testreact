@@ -1,0 +1,42 @@
+.listPosts {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.listPosts__cardPost {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 90%;
+  background-color: #ECEFF0;
+  margin-top: 3%;
+  padding: 2%;
+  border-radius: 1rem;
+}
+
+.listPosts__cardPost_number {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 0;
+}
+
+.listPosts__cardPost_header {
+  font-size: 1.3rem;
+  border-top: 1px solid tomato;
+  border-bottom: 1px solid tomato;
+}
+
+.listPosts__cardPost_body {
+  font-size: 1rem;
+}
+
+.listPosts__linkPost {
+  width: 5rem;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.listPosts__empty {
+	font-size: 1.2rem;
+}

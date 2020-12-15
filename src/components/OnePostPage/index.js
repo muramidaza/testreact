@@ -6,19 +6,17 @@ export default class OnePostPage extends React.PureComponent {
 	render() {
 
 		return (
-			<div className='onePostPage'>
-				<div>
-					<button className="onePostPage__linkBack" onClick={this.props.onGoBack}>
-						&#8592;
-					</button>
-					{this.props.post.title}
+			<div className='onePostPageBlock'>
+				<div className="onePostPageBlock__header">
+					<p className="onePostPageBlock__headerLabel">
+						<button className="onePostPageBlock__headerLinkBack" onClick={this.props.onGoBack}>
+							&#8592;
+						</button>
+						{this.props.post.title}
+					</p>
 				</div>
-				<div>
+				<div className="onePostPageBlock__body">
 					{this.props.post.body}
-				</div>
-				<div>
-					<p>Комментарии</p>
-
 				</div>
 			</div>
 		);

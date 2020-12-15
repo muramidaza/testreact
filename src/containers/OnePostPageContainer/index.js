@@ -2,19 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-import { loadData } from './actions';
-import { selectSelectedPost, selectSelectedPostID } from '../../selectors';
+import { selectSelectedPost } from '../../selectors';
 
 import OnePostPage from '../../components/OnePostPage';
-import EmptyPostPage from '../../components/EmptyPostPage';
+import InfoPage from '../../components/InfoPage';
+import ListCommentsContainer from '../ListCommentsContainer';
+
+import './index.css';
 
 class OnePostPageContainer extends React.Component {
-	componentDidMount() {
-		this.props.onFetchCommentsData(
-			this.props.url,
-			this.props.postsInPage
-		);
-	}
 
 	handleGoBack = event => {
 		event.preventDefault();
@@ -24,37 +20,29 @@ class OnePostPageContainer extends React.Component {
 	render() {
 		if (this.props.selectedPost) {
 			return (
-				<OnePostPage
-					post={this.props.selectedPost}
-					onGoBack={this.handleGoBack}
-				/>
+				<div className="onePostPage">
+					<OnePostPage
+						post={this.props.selectedPost}
+						onGoBack={this.handleGoBack}
+					/>
+					<ListCommentsContainer
+						url={this.props.url}
+						PostID={this.props.selectedPost.id}			
+					/>
+				</div>
 			);
 		} else {
-			return <EmptyPostPage onGoBack={this.handleGoBack} />;
+			return <InfoPage title="Ошибка" message="Такого поста нет"/>;
 		}
 	}
 }
 
 const mapStateToProps = store => {
 	return {
-		selectedPost: selectSelectedPost(store),
-		selectedPostID: selectSelectedPostID(store)
-	};
-};
-
-const mapDispatchToProps = dispatch => {
-	return {
-		onFetchCommentsData: (
-			url,
-			postID
-		) => {
-			dispatch(
-				loadData(url, postID)
-			);
-		},
+		selectedPost: selectSelectedPost(store),			
 	};
 };
 
 export default withRouter(
-	connect(mapStateToProps, mapDispatchToProps)(OnePostPageContainer)
+	connect(mapStateToProps)(OnePostPageContainer)
 );
