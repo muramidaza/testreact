@@ -8,18 +8,13 @@ export const loadData = (
 	url, postID
 ) => {
 	return dispatch => {
-		console.log()
-		
 		dispatch(loadDataStarted());
 
 		const URLstring = url + '/posts/' + postID  + '/comments';
 
-		console.log(URLstring);
-
 		fetch(URLstring)
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
 				if (data && data.length > 0) {
 					dispatch(loadDataSuccess(data));
 				} else {

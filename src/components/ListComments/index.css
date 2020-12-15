@@ -1,0 +1,39 @@
+.listComments {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 5%;
+  width: 80%;
+}
+
+.listComments__commentsLabel {
+  font-size: 1.4rem;  
+}
+
+.listComments__list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;  
+}
+
+.commentsList__cardComment {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2%;
+  width: 90%;
+  background-color: #ECEFF0;
+  margin-top: 2%;
+}
+
+.listComments__cardCommentName {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.listComments__cardCommentNameBody {
+  font-size: 1.3rem;
+}
+
+.listComments__cardCommentEmail {
+  font-size: 1rem; 
+}

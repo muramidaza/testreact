@@ -3,7 +3,7 @@ import { connectRouter } from 'connected-react-router';
 
 import listcontainer from './containers/ListContainer/reducers';
 import app from './containers/App/reducers';
-import comments from './containers/OnePostPageContainer/reducers';
+import comments from './containers/ListCommentsContainer/reducers';
 
 const createRootReducer = history =>
 	combineReducers({
