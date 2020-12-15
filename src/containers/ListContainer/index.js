@@ -28,7 +28,6 @@ const dividPostsByPages = (posts, postsInPage) => {
 };
 
 class ListContaiter extends React.Component {
-
 	render() {
 		const preparedPostsData = dividPostsByPages(
 			this.props.postsData,
@@ -39,12 +38,9 @@ class ListContaiter extends React.Component {
 
 		this.props.handleLoadCountPages(countPages);
 
-		const postsInCurrentPage =
-			preparedPostsData[this.props.currentPage] || [];
+		const postsInCurrentPage = preparedPostsData[this.props.currentPage] || [];
 
-		return (
-			<ListPosts posts={postsInCurrentPage} />
-		);
+		return <ListPosts posts={postsInCurrentPage} />;
 	}
 }
 
@@ -59,7 +55,7 @@ const mapDispatchToProps = dispatch => {
 	return {
 		handleLoadCountPages: countPages => {
 			dispatch(loadCountPages(countPages));
-		}
+		},
 	};
 };
 

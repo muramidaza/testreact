@@ -4,18 +4,14 @@ import {
 	LOAD_DATA_STARTED,
 } from './types';
 
-export const loadData = (
-	url, postsInPage
-) => {
+export const loadData = (url, postsInPage) => {
 	return dispatch => {
 		dispatch(loadDataStarted());
 
-		fetch(url + "/posts")
+		fetch(url + '/posts')
 			.then(res => res.json())
-			.then(data => {				
-				dispatch(
-					loadDataSuccess(data)
-				);
+			.then(data => {
+				dispatch(loadDataSuccess(data));
 			})
 			.catch(err => {
 				dispatch(loadDataFailure(err.message));
@@ -23,7 +19,7 @@ export const loadData = (
 	};
 };
 
-const loadDataSuccess = (postsData) => ({
+const loadDataSuccess = postsData => ({
 	type: LOAD_DATA_SUCCESS,
 	payload: { postsData },
 });

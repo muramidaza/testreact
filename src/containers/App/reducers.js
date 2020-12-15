@@ -17,7 +17,7 @@ export default function reducers(state = initialState, action) {
 				loading: false,
 				error: null,
 				success: true,
-				postsData: action.payload.postsData
+				postsData: action.payload.postsData,
 			};
 		case types.LOAD_DATA_FAILURE:
 			return { ...state, loading: false, error: action.payload.error };
