@@ -5,8 +5,6 @@ export const selectError = store => store.app.error;
 
 export const selectSuccess = store => store.app.success;
 
-export const selectPostsInPage = store => store.app.postsInPage;
-
 export const selectPostsData = store => store.app.postsData;
 
 //paginator

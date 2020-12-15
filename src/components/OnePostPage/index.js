@@ -6,7 +6,7 @@ export default class OnePostPage extends React.PureComponent {
 	render() {
 
 		return (
-			<div className='onePostPageBlock'>
+			<div className="onePostPageBlock">
 				<div className="onePostPageBlock__header">
 					<p className="onePostPageBlock__headerLabel">
 						<button className="onePostPageBlock__headerLinkBack" onClick={this.props.onGoBack}>

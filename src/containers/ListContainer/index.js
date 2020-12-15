@@ -6,6 +6,8 @@ import ListPosts from '../../components/ListPosts';
 
 import { loadCountPages } from './actions';
 
+import { POST_IN_PAGE } from '../../config';
+
 import {
 	selectPostsData,
 	selectPostsInPage,
@@ -30,7 +32,7 @@ class ListContaiter extends React.Component {
 	render() {
 		const preparedPostsData = dividPostsByPages(
 			this.props.postsData,
-			this.props.postsInPage
+			POST_IN_PAGE
 		);
 
 		const countPages = preparedPostsData.length || 0;
@@ -41,9 +43,7 @@ class ListContaiter extends React.Component {
 			preparedPostsData[this.props.currentPage] || [];
 
 		return (
-			<ListPosts
-				posts={postsInCurrentPage}
-			/>
+			<ListPosts posts={postsInCurrentPage} />
 		);
 	}
 }
@@ -51,7 +51,6 @@ class ListContaiter extends React.Component {
 const mapStateToProps = store => {
 	return {
 		postsData: selectPostsData(store),
-		postsInPage: selectPostsInPage(store),
 		currentPage: selectCurrentPage(store),
 	};
 };

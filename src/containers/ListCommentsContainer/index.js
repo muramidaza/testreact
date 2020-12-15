@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 
 import { loadData } from './actions';
 import { selectCommentsLoading, selectCommentsError, selectCommentsSuccess, selectCommentsData } from '../../selectors';
+import { URL } from '../../config';
 
 import ListComments from '../../components/ListComments';
 
 class ListCommentsContainer extends React.Component {
 	componentDidMount() {
 		this.props.onFetchCommentsData(
-			this.props.url,
+			URL,
 			this.props.PostID
 		);
 	}

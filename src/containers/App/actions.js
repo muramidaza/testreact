@@ -14,10 +14,7 @@ export const loadData = (
 			.then(res => res.json())
 			.then(data => {				
 				dispatch(
-					loadDataSuccess(
-						data,
-						postsInPage
-					)
+					loadDataSuccess(data)
 				);
 			})
 			.catch(err => {
@@ -27,11 +24,10 @@ export const loadData = (
 	};
 };
 
-const loadDataSuccess = (postsData, postsInPage) => ({
+const loadDataSuccess = (postsData) => ({
 	type: LOAD_DATA_SUCCESS,
 	payload: {
-		postsData,
-		postsInPage,
+		postsData
 	},
 });
 

@@ -26,7 +26,6 @@ class OnePostPageContainer extends React.Component {
 						onGoBack={this.handleGoBack}
 					/>
 					<ListCommentsContainer
-						url={this.props.url}
 						PostID={this.props.selectedPost.id}			
 					/>
 				</div>

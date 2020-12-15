@@ -5,7 +5,6 @@ const initialState = {
 	error: null,
 	success: false,
 	postsData: [],
-	postsInPage: 5
 };
 
 export default function reducers(state = initialState, action) {
@@ -18,8 +17,7 @@ export default function reducers(state = initialState, action) {
 				loading: false,
 				error: null,
 				success: true,
-				postsData: action.payload.postsData,
-				postsInPage: action.payload.postsInPage
+				postsData: action.payload.postsData
 			};
 		case types.LOAD_DATA_FAILURE:
 			return { ...state, loading: false, error: action.payload.error };
