@@ -5,11 +5,12 @@ export const selectError = store => store.app.error;
 
 export const selectSuccess = store => store.app.success;
 
-export const selectPostsData = store => store.app.postsData;
+const getPostsData = store => store.app.postsData;
+
+export const selectPostsData = getPostsData;
 
 //paginator
-const currentPage = store => store.router.location.pathname.split('/')[2] || 0;
-export const selectCurrentPage = currentPage;
+export const selectCurrentPage = store => store.router.location.pathname.split('/')[2] || 0;
 
 export const selectCountPages = store => store.listcontainer.countPages;
 
@@ -19,8 +20,8 @@ export const selectSelectedPostID = store =>
 	store.router.location.pathname.split('/')[2] || -1;
 
 export const selectSelectedPost = store => {
-	const postData = store.app.postsData;
-	const selectedPost = store.router.location.pathname.split('/')[2] || -1;
+	const postData = getPostsData(store);
+	const selectedPost = selectSelectedPostID(store);
 	return postData[selectedPost];
 };
 
